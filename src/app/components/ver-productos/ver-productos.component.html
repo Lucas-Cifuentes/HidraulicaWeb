@@ -7,14 +7,23 @@
       <input type="text" class="form-control" placeholder="Buscar..." />
     </div>
   </div>
-  <table class="table table-striped my-2">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Descripción</th>
-        <th scope="col">Nombre</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+  <div *ngIf="cargando"><app-loading></app-loading></div>
+  <div *ngIf="!cargando">
+    <table class="table table-striped my-2">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Nombre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of ListaProductos">
+          <th scope="row">{{ producto.Codigo }}</th>
+          <td>{{ producto.Descripcion }}</td>
+          <td>{{ producto.Tipo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
