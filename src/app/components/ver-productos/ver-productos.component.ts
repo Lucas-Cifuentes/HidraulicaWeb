@@ -11,6 +11,7 @@ export class VerProductosComponent implements OnInit {
   cargando: boolean = true;
 
   constructor(private db: AngularFirestore) {}
+  filterCodigo = '';
 
   ngOnInit() {
     this.db

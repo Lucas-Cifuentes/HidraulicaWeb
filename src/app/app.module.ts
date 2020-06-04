@@ -15,9 +15,10 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NuevoProductoComponent } from './components/nuevo-producto/nuevo-producto.component';
 import { VerProductosComponent } from './components/ver-productos/ver-productos.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -32,12 +33,14 @@ import { VerProductosComponent } from './components/ver-productos/ver-productos.
     LoadingComponent,
     NuevoProductoComponent,
     VerProductosComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
