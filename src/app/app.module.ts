@@ -18,6 +18,7 @@ import { environment } from 'src/environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NuevoProductoComponent } from './components/nuevo-producto/nuevo-producto.component';
 import { VerProductosComponent } from './components/ver-productos/ver-productos.component';
+import { TodosLosProductosComponent } from './components/todos-los-productos/todos-los-productos.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { VerProductosComponent } from './components/ver-productos/ver-productos.
     LoadingComponent,
     NuevoProductoComponent,
     VerProductosComponent,
+    TodosLosProductosComponent,
   ],
   imports: [
     BrowserModule,
