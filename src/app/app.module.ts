@@ -19,6 +19,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NuevoProductoComponent } from './components/nuevo-producto/nuevo-producto.component';
 import { VerProductosComponent } from './components/ver-productos/ver-productos.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { NuevaVentaComponent } from './components/nueva-venta/nueva-venta.component';
+import { VerVentasComponent } from './components/ver-ventas/ver-ventas.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { SearchPipe } from './pipes/search.pipe';
     NuevoProductoComponent,
     VerProductosComponent,
     SearchPipe,
+    NuevaVentaComponent,
+    VerVentasComponent,
   ],
   imports: [
     BrowserModule,
