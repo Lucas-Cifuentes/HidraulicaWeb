@@ -1,0 +1,19 @@
+.navbar {
+  position: absolute;
+  z-index: 1;
+  padding: 15px;
+  width: 100%;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.nav-link,
+.navbar-brand {
+  color: white;
+  margin-left: 10px;
+}
+
+.nav-link:hover {
+  border-bottom: 1px solid;
+  color: white;
+}
