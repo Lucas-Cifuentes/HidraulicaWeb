@@ -16,6 +16,8 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { NuevoProductoComponent } from './components/nuevo-producto/nuevo-producto.component';
+import { VerProductosComponent } from './components/ver-productos/ver-productos.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NosotrosComponent,
     LoginAdminComponent,
     LoadingComponent,
+    NuevoProductoComponent,
+    VerProductosComponent,
   ],
   imports: [
     BrowserModule,

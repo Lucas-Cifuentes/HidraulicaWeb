@@ -14,34 +14,58 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          routerLink="/"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          >Inicio
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/productos" routerLinkActive="active"
-          >Productos</a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/trabajos" routerLinkActive="active"
-          >Nuestros Trabajos</a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/nosotros" routerLinkActive="active"
-          >Nosotros</a
-        >
-      </li>
-    </ul>
+  <!-- ------------------------ -->
+  <div *ngIf="!usuario; else showAdmin">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Inicio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/productos" routerLinkActive="active"
+            >Productos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/trabajos" routerLinkActive="active"
+            >Nuestros Trabajos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/nosotros" routerLinkActive="active"
+            >Nosotros</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
+  <!-- ------------------------ -->
+  <ng-template #showAdmin>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/admin"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Inicio Admin
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/productos" routerLinkActive="active"
+            >Productos</a
+          >
+        </li>
+      </ul>
+    </div>
+  </ng-template>
 </nav>
 
 <img width="100%" src="../../../assets/Foto-local.jpg" />
