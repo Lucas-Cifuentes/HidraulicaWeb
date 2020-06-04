@@ -1,1 +1,55 @@
-<p>nuevo-producto works!</p>
+<div class="container mt-5">
+  <h3>Añadir un Nuevo Producto</h3>
+  <div class="row">
+    <div class="input-group">
+      <div class="col-sm">
+        <label>Codigo</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Ingrese el codigo del producto"
+          (input)="codigoProducto($event.target.value)"
+        />
+      </div>
+      <div class="col-sm">
+        <label>Descripcion</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Ingrese el codigo del producto"
+          (input)="descripcionCodigo($event.target.value)"
+        />
+      </div>
+      <div class="col-sm">
+        <label>Tipo</label>
+        <select
+          class="custom-select"
+          id="inputGroupSelect01"
+          (input)="tipoProducto($event.target.value)"
+        >
+          <option selected>Seleccione el Tipo de Producto</option>
+          <option value="Conector Recto">Conector Recto</option>
+          <option value="Conector C90°">Conector C90°</option>
+          <option value="Union Doble">Union Doble</option>
+          <option value="Union Tee">Union Tee</option>
+          <option value="Tee Rosca Central">Tee Rosca Central</option>
+          <option value="Union Doble Recta">Union Doble Recta</option>
+          <option value="Bifurcacion">Bifurcacion</option>
+          <option value="Pasachapa">Pasachapa</option>
+          <option value="Regulador de Caudal con Rosca"
+            >Regulador de Caudal con Rosca</option
+          >
+          <option value="Regulador de Caudal Union"
+            >Regulador de Caudal Union</option
+          >
+          <option value="Union Cruz">Union Cruz</option>
+          <option value="Union Reduccion">Union Reduccion</option>
+          <option value="Recto x Hembra">Recto x Hembra</option>
+          <option value="Silenciador Corto">Silenciador Corto</option>
+          <option value="Silenciador Largo">Silenciador Largo</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary mt-2" (click)="agregar()">Agregar</button>
+</div>
