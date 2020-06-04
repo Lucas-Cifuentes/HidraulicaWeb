@@ -15,6 +15,14 @@
   </div>
   <div *ngIf="cargando"><app-loading></app-loading></div>
   <div *ngIf="!cargando">
+    <div>
+      <button class="btn btn-success float-right">Vender</button>
+      <div *ngFor="let lista of listaVender">
+        <span class="badge badge-pill badge-info d-inline-block">{{
+          lista.Codigo
+        }}</span>
+      </div>
+    </div>
     <table class="table table-striped my-2">
       <thead>
         <tr>
@@ -29,12 +37,13 @@
           <td>{{ producto.Descripcion }}</td>
           <td>{{ producto.Tipo }}</td>
           <td>
-            <a
-              [routerLink]="['/nueva-venta/', producto.id]"
-              class="btn btn-success"
-              role="button"
-              >Vender</a
+            <button
+              type="button"
+              class="btn btn-info"
+              (click)="addToList(producto)"
             >
+              Añadir
+            </button>
           </td>
         </tr>
       </tbody>

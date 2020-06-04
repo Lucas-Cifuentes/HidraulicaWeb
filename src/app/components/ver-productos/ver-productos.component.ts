@@ -14,6 +14,8 @@ export class VerProductosComponent implements OnInit {
   filterCodigo = '';
   producto: any;
 
+  listaVender: any[] = new Array<any>();
+
   ngOnInit() {
     this.ListaProductos.length = 0;
     this.db
@@ -27,5 +29,10 @@ export class VerProductosComponent implements OnInit {
           this.ListaProductos.push(this.producto);
         });
       });
+  }
+
+  addToList(producto) {
+    this.listaVender.push(producto);
+    console.log(this.listaVender);
   }
 }
