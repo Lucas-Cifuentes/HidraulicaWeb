@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: 'AIzaSyABjUzV9Q_ocCQLQcuLnA4IXBqCSX-Yvs8',
+    authDomain: 'oleohidraulicanico-49a68.firebaseapp.com',
+    databaseURL: 'https://oleohidraulicanico-49a68.firebaseio.com',
+    projectId: 'oleohidraulicanico-49a68',
+    storageBucket: 'oleohidraulicanico-49a68.appspot.com',
+    messagingSenderId: '329997129897',
+    appId: '1:329997129897:web:c29de627d35234c5b9b1b8',
+    measurementId: 'G-CMMRP90R18',
+  },
 };
 
 /*

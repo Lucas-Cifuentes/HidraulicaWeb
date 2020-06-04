@@ -9,6 +9,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CarouselEmpresasComponent } from './components/carousel-empresas/carousel-empresas.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { LoginAdminComponent } from './components/login-admin/login-admin.component';
+import { LoadingComponent } from './components/loading/loading.component';
+
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,13 +25,17 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
     FooterComponent,
     CarouselEmpresasComponent,
     AdminComponent,
-    NosotrosComponent
+    NosotrosComponent,
+    LoginAdminComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
