@@ -1,1 +1,45 @@
-<p>nueva-venta works!</p>
+<div class="container mt-5">
+  <h3>Nueva Venta</h3>
+
+  <div class="input-group">
+    <div class="row">
+      <div class="col-sm">
+        <label>Codigo del Producto</label>
+        <input
+          class="form-control"
+          type="text"
+          [placeholder]="Producto.Codigo"
+          readonly
+        />
+        <label>Tipo</label>
+        <input
+          class="form-control"
+          type="text"
+          [placeholder]="Producto.Descripcion"
+          readonly
+        />
+        <label>Descripcion</label>
+        <input
+          class="form-control"
+          type="text"
+          [placeholder]="Producto.Tipo"
+          readonly
+        />
+      </div>
+      <div class="col-sm">
+        <label>Precio</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Ingrese el valor del producto"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="mt-3">
+    <button class="btn btn-success">Vender</button>
+    <a routerLink="/ver-productos" role="button" class="btn btn-danger ml-2"
+      >Cancelar</a
+    >
+  </div>
+</div>

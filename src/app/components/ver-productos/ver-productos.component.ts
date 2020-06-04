@@ -12,14 +12,20 @@ export class VerProductosComponent implements OnInit {
 
   constructor(private db: AngularFirestore) {}
   filterCodigo = '';
+  producto: any;
 
   ngOnInit() {
+    this.ListaProductos.length = 0;
     this.db
       .collection('Productos')
-      .valueChanges()
+      .get()
       .subscribe((result) => {
         this.cargando = false;
-        this.ListaProductos = result;
+        result.forEach((item) => {
+          this.producto = item.data();
+          this.producto.id = item.id;
+          this.ListaProductos.push(this.producto);
+        });
       });
   }
 }

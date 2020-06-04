@@ -5,6 +5,8 @@ import { AdminComponent } from './components/admin/admin.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { VerProductosComponent } from './components/ver-productos/ver-productos.component';
 import { NuevoProductoComponent } from './components/nuevo-producto/nuevo-producto.component';
+import { NuevaVentaComponent } from './components/nueva-venta/nueva-venta.component';
+import { VerVentasComponent } from './components/ver-ventas/ver-ventas.component';
 
 const routes: Routes = [
   {
@@ -27,6 +29,14 @@ const routes: Routes = [
   {
     path: 'nuevo-producto',
     component: NuevoProductoComponent,
+  },
+  {
+    path: 'nueva-venta/:id',
+    component: NuevaVentaComponent,
+  },
+  {
+    path: 'ver-ventas',
+    component: VerVentasComponent,
   },
 ];
 
