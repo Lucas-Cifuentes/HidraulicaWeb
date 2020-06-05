@@ -7,6 +7,7 @@ import { VerProductosComponent } from './components/ver-productos/ver-productos.
 import { NuevoProductoComponent } from './components/nuevo-producto/nuevo-producto.component';
 import { NuevaVentaComponent } from './components/nueva-venta/nueva-venta.component';
 import { VerVentasComponent } from './components/ver-ventas/ver-ventas.component';
+import { DetallesVentaComponent } from './components/detalles-venta/detalles-venta.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'ver-ventas',
     component: VerVentasComponent,
+  },
+  {
+    path: 'detalles-venta',
+    component: DetallesVentaComponent,
   },
 ];
 

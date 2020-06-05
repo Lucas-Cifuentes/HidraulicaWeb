@@ -11,7 +11,11 @@
       <tr>
         <th scope="row">{{ fecha }}</th>
         <td>{{ precio | currency }}</td>
-        <td><button class="btn btn-info" type="button">Detalles</button></td>
+        <td>
+          <a routerLink="/detalles-venta" role="button" class="btn btn-info"
+            >Detalles</a
+          >
+        </td>
       </tr>
     </tbody>
   </table>
