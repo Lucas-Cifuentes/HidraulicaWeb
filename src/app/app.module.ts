@@ -22,6 +22,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { NuevaVentaComponent } from './components/nueva-venta/nueva-venta.component';
 import { VerVentasComponent } from './components/ver-ventas/ver-ventas.component';
 import { VentasService } from './services/ventas.service';
+import { DetallesVentaComponent } from './components/detalles-venta/detalles-venta.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { VentasService } from './services/ventas.service';
     SearchPipe,
     NuevaVentaComponent,
     VerVentasComponent,
+    DetallesVentaComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,13 +4,13 @@
     <thead>
       <tr>
         <th scope="col">Fecha</th>
-        <th scope="col">Productos Vendidos</th>
+        <th scope="col">Monto</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th scope="row">{{ fecha }}</th>
-        <td>productos vendidos</td>
+        <td>{{ precio | currency }}</td>
         <td><button class="btn btn-info" type="button">Detalles</button></td>
       </tr>
     </tbody>
