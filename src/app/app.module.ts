@@ -23,6 +23,7 @@ import { NuevaVentaComponent } from './components/nueva-venta/nueva-venta.compon
 import { VerVentasComponent } from './components/ver-ventas/ver-ventas.component';
 import { VentasService } from './services/ventas.service';
 import { DetallesVentaComponent } from './components/detalles-venta/detalles-venta.component';
+import { EditarProductoComponent } from './components/editar-producto/editar-producto.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { DetallesVentaComponent } from './components/detalles-venta/detalles-ven
     NuevaVentaComponent,
     VerVentasComponent,
     DetallesVentaComponent,
+    EditarProductoComponent,
   ],
   imports: [
     BrowserModule,
