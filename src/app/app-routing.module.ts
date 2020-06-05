@@ -8,6 +8,7 @@ import { NuevoProductoComponent } from './components/nuevo-producto/nuevo-produc
 import { NuevaVentaComponent } from './components/nueva-venta/nueva-venta.component';
 import { VerVentasComponent } from './components/ver-ventas/ver-ventas.component';
 import { DetallesVentaComponent } from './components/detalles-venta/detalles-venta.component';
+import { AgregarTrabajosComponent } from './components/agregar-trabajos/agregar-trabajos.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'detalles-venta',
     component: DetallesVentaComponent,
+  },
+  {
+    path: 'agregar-trabajos',
+    component: AgregarTrabajosComponent,
   },
 ];
 

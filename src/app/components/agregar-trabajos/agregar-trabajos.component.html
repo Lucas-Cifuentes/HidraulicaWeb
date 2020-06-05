@@ -1,1 +1,55 @@
-<p>agregar-trabajos works!</p>
+<!-- <div class="container mt-5">
+  <div class="row">
+    <div class="col-sm">
+      <div class="card" style="width: 18rem;">
+        <img src="../../../assets/nosotros-foto-3.jpg" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">Titulo</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container mt-5">
+  <h3>Publicar un Nuevo Trabajo</h3>
+  <div class="input-group">
+    <div class="row">
+      <div class="col-sm mt-3">
+        <label>Titulo</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Ingrese el titulo"
+          (input)="tituloTrabajo($event.target.value)"
+        />
+      </div>
+      <div class="col-sm mt-3">
+        <label>Descripción</label>
+        <textarea
+          class="form-control"
+          placeholder="Ingrese la descripción"
+          (input)="descripcionTrabajo($event.target.value)"
+        ></textarea>
+      </div>
+      <div class="col-sm mt-3">
+        <label>Elija la Imagen</label>
+        <div class="custom-file">
+          <input
+            type="file"
+            class="custom-file-input"
+            id="inputGroupFile01"
+            aria-describedby="inputGroupFileAddon01"
+          />
+          <label class="custom-file-label" for="inputGroupFile01"
+            >Elija la Imagen</label
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
