@@ -24,6 +24,7 @@ import { VerVentasComponent } from './components/ver-ventas/ver-ventas.component
 import { VentasService } from './services/ventas.service';
 import { DetallesVentaComponent } from './components/detalles-venta/detalles-venta.component';
 import { EditarProductoComponent } from './components/editar-producto/editar-producto.component';
+import { AgregarTrabajosComponent } from './components/agregar-trabajos/agregar-trabajos.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { EditarProductoComponent } from './components/editar-producto/editar-pro
     VerVentasComponent,
     DetallesVentaComponent,
     EditarProductoComponent,
+    AgregarTrabajosComponent,
   ],
   imports: [
     BrowserModule,
