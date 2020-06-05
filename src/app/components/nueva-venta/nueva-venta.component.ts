@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ActivatedRoute } from '@angular/router';
+import { VentasService } from 'src/app/services/ventas.service';
 
 @Component({
   selector: 'app-nueva-venta',
@@ -10,7 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class NuevaVentaComponent implements OnInit {
   constructor(
     private activeRoute: ActivatedRoute,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private ventas: VentasService
   ) {}
 
   Producto = {
@@ -19,15 +21,7 @@ export class NuevaVentaComponent implements OnInit {
     Tipo: '',
   };
 
-  ngOnInit() {
-    let id = this.activeRoute.snapshot.params.id;
-    this.db
-      .doc<any>('Productos' + '/' + id)
-      .valueChanges()
-      .subscribe((producto) => {
-        this.Producto.Codigo = producto.Codigo;
-        this.Producto.Descripcion = producto.Descripcion;
-        this.Producto.Tipo = producto.Tipo;
-      });
-  }
+  ListaVender = this.ventas.listaVenta;
+
+  ngOnInit() {}
 }

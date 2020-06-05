@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { VentasService } from 'src/app/services/ventas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ver-productos',
@@ -10,7 +12,11 @@ export class VerProductosComponent implements OnInit {
   ListaProductos: any[] = new Array<any>();
   cargando: boolean = true;
 
-  constructor(private db: AngularFirestore) {}
+  constructor(
+    private db: AngularFirestore,
+    private ventas: VentasService,
+    private router: Router
+  ) {}
   filterCodigo = '';
   producto: any;
 
@@ -46,6 +52,12 @@ export class VerProductosComponent implements OnInit {
   }
 
   venderProductos() {
-    console.log(this.listaVender);
+    if (this.listaVender.length > 0) {
+      this.ventas.listaVenta = this.listaVender;
+      // console.log(this.ventas);
+      this.router.navigate(['/nueva-venta']);
+    } else {
+      console.log('Lista de ventas vacia');
+    }
   }
 }

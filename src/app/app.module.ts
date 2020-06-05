@@ -21,6 +21,7 @@ import { VerProductosComponent } from './components/ver-productos/ver-productos.
 import { SearchPipe } from './pipes/search.pipe';
 import { NuevaVentaComponent } from './components/nueva-venta/nueva-venta.component';
 import { VerVentasComponent } from './components/ver-ventas/ver-ventas.component';
+import { VentasService } from './services/ventas.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { VerVentasComponent } from './components/ver-ventas/ver-ventas.component
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [VentasService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

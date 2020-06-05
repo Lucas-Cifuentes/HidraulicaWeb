@@ -31,7 +31,7 @@ const routes: Routes = [
     component: NuevoProductoComponent,
   },
   {
-    path: 'nueva-venta/:id',
+    path: 'nueva-venta',
     component: NuevaVentaComponent,
   },
   {
