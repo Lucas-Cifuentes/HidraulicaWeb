@@ -16,11 +16,25 @@
   <div *ngIf="cargando"><app-loading></app-loading></div>
   <div *ngIf="!cargando">
     <div>
-      <button class="btn btn-success float-right">Vender</button>
+      <button
+        class="btn btn-success float-right"
+        type="button"
+        (click)="venderProductos()"
+      >
+        Vender
+      </button>
       <div *ngFor="let lista of listaVender">
-        <span class="badge badge-pill badge-info d-inline-block">{{
-          lista.Codigo
-        }}</span>
+        <span class="badge badge-pill badge-info d-inline-block"
+          >{{ lista.Codigo
+          }}<button
+            type="button"
+            class="close"
+            aria-label="Close"
+            (click)="borrarProducto(lista.id)"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button></span
+        >
       </div>
     </div>
     <table class="table table-striped my-2">

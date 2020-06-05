@@ -33,6 +33,19 @@ export class VerProductosComponent implements OnInit {
 
   addToList(producto) {
     this.listaVender.push(producto);
+  }
+
+  borrarProducto(id) {
+    let index = -1;
+    this.listaVender.filter(function (producto, i) {
+      if (producto.id === id) {
+        index = i;
+      }
+    });
+    this.listaVender.splice(index, 1);
+  }
+
+  venderProductos() {
     console.log(this.listaVender);
   }
 }
