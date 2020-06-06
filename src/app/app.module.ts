@@ -25,6 +25,7 @@ import { VentasService } from './services/ventas.service';
 import { DetallesVentaComponent } from './components/detalles-venta/detalles-venta.component';
 import { EditarProductoComponent } from './components/editar-producto/editar-producto.component';
 import { AgregarTrabajosComponent } from './components/agregar-trabajos/agregar-trabajos.component';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { AgregarTrabajosComponent } from './components/agregar-trabajos/agregar-
     AngularFireModule.initializeApp(environment.firebaseConfig),
     ReactiveFormsModule,
     FormsModule,
+    AngularFireStorageModule,
   ],
   providers: [VentasService],
   bootstrap: [AppComponent],
