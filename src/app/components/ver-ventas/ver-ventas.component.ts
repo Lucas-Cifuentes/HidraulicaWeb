@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { User } from 'firebase';
 
 @Component({
   selector: 'app-ver-ventas',
@@ -7,11 +9,14 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./ver-ventas.component.scss'],
 })
 export class VerVentasComponent implements OnInit {
-  constructor(private db: AngularFirestore) {}
+  constructor(private db: AngularFirestore, private auth: AngularFireAuth) {}
 
   listaVentas: any;
 
   productosVendidos: any[] = new Array<any>();
+
+  usuario: User;
+  cargando = true;
 
   ngOnInit() {
     // this.db
@@ -29,6 +34,10 @@ export class VerVentasComponent implements OnInit {
     //       });
     //     }
     //   });
+    this.auth.user.subscribe((user) => {
+      this.cargando = false;
+      this.usuario = user;
+    });
   }
 
   f = new Date();

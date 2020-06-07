@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { User } from 'firebase';
 
 @Component({
   selector: 'app-nuevo-producto',
@@ -13,9 +15,17 @@ export class NuevoProductoComponent implements OnInit {
     Tipo: '',
   };
 
-  constructor(private db: AngularFirestore) {}
+  constructor(private db: AngularFirestore, private auth: AngularFireAuth) {}
 
-  ngOnInit(): void {}
+  usuario: User;
+  cargando = true;
+
+  ngOnInit() {
+    this.auth.user.subscribe((user) => {
+      this.usuario = user;
+      this.cargando = false;
+    });
+  }
 
   codigoProducto(codigo) {
     this.nuevoProducto.Codigo = codigo.toUpperCase();

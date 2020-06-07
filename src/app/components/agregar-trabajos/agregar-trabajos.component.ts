@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { User } from 'firebase';
 
 @Component({
   selector: 'app-agregar-trabajos',
@@ -10,10 +12,19 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class AgregarTrabajosComponent implements OnInit {
   constructor(
     private storage: AngularFireStorage,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private auth: AngularFireAuth
   ) {}
 
-  ngOnInit() {}
+  usuario: User;
+  cargando = true;
+
+  ngOnInit() {
+    this.auth.user.subscribe((user) => {
+      this.cargando = false;
+      this.usuario = user;
+    });
+  }
 
   agregarTrabajo = {
     Titulo: '',

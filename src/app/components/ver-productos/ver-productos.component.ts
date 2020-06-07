@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { VentasService } from 'src/app/services/ventas.service';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { User } from 'firebase';
 
 @Component({
   selector: 'app-ver-productos',
@@ -15,12 +17,15 @@ export class VerProductosComponent implements OnInit {
   constructor(
     private db: AngularFirestore,
     private ventas: VentasService,
-    private router: Router
+    private router: Router,
+    private auth: AngularFireAuth
   ) {}
   filterCodigo = '';
   producto: any;
 
   listaVender: any[] = new Array<any>();
+
+  usuario: User;
 
   ngOnInit() {
     this.ListaProductos.length = 0;
@@ -35,6 +40,10 @@ export class VerProductosComponent implements OnInit {
           this.ListaProductos.push(this.producto);
         });
       });
+
+    this.auth.user.subscribe((user) => {
+      this.usuario = user;
+    });
   }
 
   addToList(producto) {

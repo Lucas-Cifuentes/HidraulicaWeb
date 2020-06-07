@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { ActivatedRoute } from '@angular/router';
 import { VentasService } from 'src/app/services/ventas.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { User } from 'firebase';
 
 @Component({
   selector: 'app-nueva-venta',
@@ -9,11 +10,22 @@ import { VentasService } from 'src/app/services/ventas.service';
   styleUrls: ['./nueva-venta.component.scss'],
 })
 export class NuevaVentaComponent implements OnInit {
-  constructor(private db: AngularFirestore, private ventas: VentasService) {}
+  constructor(
+    private db: AngularFirestore,
+    private ventas: VentasService,
+    private auth: AngularFireAuth
+  ) {}
 
   ListaVender = this.ventas.listaVenta;
+  usuario: User;
+  cargando = true;
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.auth.user.subscribe((user) => {
+      this.cargando = false;
+      this.usuario = user;
+    });
+  }
 
   nuevaVenta = {
     Productos: [],
