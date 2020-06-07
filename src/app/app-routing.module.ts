@@ -9,6 +9,7 @@ import { NuevaVentaComponent } from './components/nueva-venta/nueva-venta.compon
 import { VerVentasComponent } from './components/ver-ventas/ver-ventas.component';
 import { DetallesVentaComponent } from './components/detalles-venta/detalles-venta.component';
 import { AgregarTrabajosComponent } from './components/agregar-trabajos/agregar-trabajos.component';
+import { TrabajosRealizadosComponent } from './components/trabajos-realizados/trabajos-realizados.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'nosotros',
     component: NosotrosComponent,
+  },
+  {
+    path: 'trabajos',
+    component: TrabajosRealizadosComponent,
   },
   // ------------------------ Admin Views
   {

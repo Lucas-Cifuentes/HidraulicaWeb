@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <h3 class="mb-5">Trabajos Realizados</h3>
+
+  <div *ngIf="cargando">
+    <app-loading></app-loading>
+  </div>
+
+  <div *ngIf="!cargando">
+    <div class="row">
+      <div *ngFor="let trabajo of ListaTrabajosRealizados">
+        <div class="col-sm">
+          <div class="card" style="width: 18rem;">
+            <img [src]="trabajo.Imagen" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">{{ trabajo.Titulo }}</h5>
+              <p class="card-text">{{ trabajo.Descripcion }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

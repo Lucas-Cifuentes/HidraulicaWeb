@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { NuevoTrabajoService } from 'src/app/services/nuevo-trabajo.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-agregar-trabajos',
@@ -10,19 +10,23 @@ import { NuevoTrabajoService } from 'src/app/services/nuevo-trabajo.service';
 export class AgregarTrabajosComponent implements OnInit {
   constructor(
     private storage: AngularFireStorage,
-    private trabajoService: NuevoTrabajoService
+    private db: AngularFirestore
   ) {}
 
   ngOnInit() {}
 
+  agregarTrabajo = {
+    Titulo: '',
+    Descripcion: '',
+    Imagen: '',
+  };
+
   tituloTrabajo(titulo) {
-    this.trabajoService.NuevoTrabajo.Titulo = titulo;
-    console.log(this.trabajoService.NuevoTrabajo);
+    this.agregarTrabajo.Titulo = titulo;
   }
 
   descripcionTrabajo(descripcion) {
-    this.trabajoService.NuevoTrabajo.Descripcion = descripcion;
-    console.log(this.trabajoService.NuevoTrabajo);
+    this.agregarTrabajo.Descripcion = descripcion;
   }
 
   subirImagen(evento) {
@@ -30,10 +34,21 @@ export class AgregarTrabajosComponent implements OnInit {
     let nombre = evento.target.files[0].name;
     let ruta = `Imagenes/${nombre}`;
     const ref = this.storage.ref(ruta);
-    console.log(ruta);
     const subir = ref.put(imagen);
     subir.then(() => {
       console.log('imagen subida');
+      ref.getDownloadURL().subscribe((url) => {
+        this.agregarTrabajo.Imagen = url;
+      });
     });
+  }
+
+  enviarNuevoTrabajo() {
+    this.db
+      .collection('Trabajos Realizados')
+      .add(this.agregarTrabajo)
+      .then(() => {
+        console.log('Trabajo Enviado');
+      });
   }
 }

@@ -26,6 +26,7 @@ import { DetallesVentaComponent } from './components/detalles-venta/detalles-ven
 import { EditarProductoComponent } from './components/editar-producto/editar-producto.component';
 import { AgregarTrabajosComponent } from './components/agregar-trabajos/agregar-trabajos.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { TrabajosRealizadosComponent } from './components/trabajos-realizados/trabajos-realizados.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     DetallesVentaComponent,
     EditarProductoComponent,
     AgregarTrabajosComponent,
+    TrabajosRealizadosComponent,
   ],
   imports: [
     BrowserModule,
