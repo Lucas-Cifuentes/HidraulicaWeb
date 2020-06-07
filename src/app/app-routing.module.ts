@@ -10,6 +10,7 @@ import { VerVentasComponent } from './components/ver-ventas/ver-ventas.component
 import { DetallesVentaComponent } from './components/detalles-venta/detalles-venta.component';
 import { AgregarTrabajosComponent } from './components/agregar-trabajos/agregar-trabajos.component';
 import { TrabajosRealizadosComponent } from './components/trabajos-realizados/trabajos-realizados.component';
+import { ProductosMostrarComponent } from './components/productos-mostrar/productos-mostrar.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'trabajos',
     component: TrabajosRealizadosComponent,
+  },
+  {
+    path: 'productos',
+    component: ProductosMostrarComponent,
   },
   // ------------------------ Admin Views
   {

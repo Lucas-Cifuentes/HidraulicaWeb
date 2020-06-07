@@ -27,6 +27,7 @@ import { EditarProductoComponent } from './components/editar-producto/editar-pro
 import { AgregarTrabajosComponent } from './components/agregar-trabajos/agregar-trabajos.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { TrabajosRealizadosComponent } from './components/trabajos-realizados/trabajos-realizados.component';
+import { ProductosMostrarComponent } from './components/productos-mostrar/productos-mostrar.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { TrabajosRealizadosComponent } from './components/trabajos-realizados/tr
     EditarProductoComponent,
     AgregarTrabajosComponent,
     TrabajosRealizadosComponent,
+    ProductosMostrarComponent,
   ],
   imports: [
     BrowserModule,
