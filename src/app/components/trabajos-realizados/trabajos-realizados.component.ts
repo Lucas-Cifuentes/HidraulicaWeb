@@ -15,12 +15,9 @@ export class TrabajosRealizadosComponent implements OnInit {
   ngOnInit() {
     this.db
       .collection('Trabajos Realizados')
-      .get()
-      .subscribe((result) => {
-        result.forEach((item) => {
-          this.cargando = false;
-          this.ListaTrabajosRealizados.push(item.data());
-        });
+      .valueChanges()
+      .subscribe((trabajos) => {
+        this.ListaTrabajosRealizados = trabajos;
       });
   }
 }

@@ -28,16 +28,11 @@ export class AgregarTrabajosComponent implements OnInit {
 
   agregarTrabajo = {
     Titulo: '',
-    Descripcion: '',
     Imagen: '',
   };
 
   tituloTrabajo(titulo) {
     this.agregarTrabajo.Titulo = titulo;
-  }
-
-  descripcionTrabajo(descripcion) {
-    this.agregarTrabajo.Descripcion = descripcion;
   }
 
   subirImagen(evento) {
