@@ -1,5 +1,7 @@
 # HidraulicaWeb
 
+Website developed with angular 9 and firebase for a hydraulic workshop.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
 ## Development server
