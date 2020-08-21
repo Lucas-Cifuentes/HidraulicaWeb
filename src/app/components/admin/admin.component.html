@@ -1,0 +1,23 @@
+<div class="container">
+  <div *ngIf="usuario && !cargando; else showLogin">
+    <div class="row mt-3">
+      <div class="col-6">
+        <h4>Sesion Iniciada con la cuenta: {{ usuario.email }}</h4>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-danger float-right" (click)="Logout()">
+          Cerrar Sesion
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #showLogin>
+  <div *ngIf="cargando">
+    <app-loading></app-loading>
+  </div>
+  <div *ngIf="!cargando">
+    <app-login-admin></app-login-admin>
+  </div>
+</ng-template>

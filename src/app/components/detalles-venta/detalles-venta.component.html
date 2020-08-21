@@ -1,0 +1,29 @@
+<div *ngIf="usuario && !cargando; else showLogin">
+  <div class="container mt-5">
+    <h3>Detalles de la venta</h3>
+
+    <div class="row">
+      <div class="col-sm mt-2">
+        <label>Fecha de la venta:</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Fecha de la venta"
+          readonly
+        />
+      </div>
+      <div class="col-sm">
+        <label>Cantidad de Productos: </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #showLogin>
+  <div *ngIf="cargando">
+    <app-loading></app-loading>
+  </div>
+  <div *ngIf="!cargando">
+    <app-login-admin></app-login-admin>
+  </div>
+</ng-template>

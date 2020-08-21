@@ -1,0 +1,33 @@
+<div *ngIf="usuario && !cargando; else showLogin">
+  <div class="container mt-5">
+    <h3>Historial de Ventas</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Fecha</th>
+          <th scope="col">Monto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{ fecha }}</th>
+          <td>{{ precio | currency }}</td>
+          <td>
+            <a routerLink="/detalles-venta" role="button" class="btn btn-info"
+              >Detalles</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #showLogin>
+  <div *ngIf="cargando">
+    <app-loading></app-loading>
+  </div>
+  <div *ngIf="!cargando">
+    <app-login-admin></app-login-admin>
+  </div>
+</ng-template>

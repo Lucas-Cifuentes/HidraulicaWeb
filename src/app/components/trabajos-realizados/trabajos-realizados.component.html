@@ -1,0 +1,61 @@
+<div class="container mt-5">
+  <h3 class="mb-5">Trabajos Realizados</h3>
+
+  <h4>Imágenes</h4>
+
+  <div class="row">
+    <!-- ------------------------------------ -->
+    <div *ngFor="let trabajo of ListaTrabajosRealizados">
+      <div class="col-md-3 mt-3">
+        <div class="card shadow" style="width: 18rem; height: 23rem;">
+          <img [src]="trabajo.Imagen" class="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">{{ trabajo.Titulo }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ------------------------------------ -->
+  </div>
+
+  <h4 class="mt-5">Videos</h4>
+
+  <div class="row">
+    <div class="col-md-3 mt-3 mr-5">
+      <div class="card shadow" style="width: 18rem;">
+        <video
+          src="../../../assets/Videos/WhatsApp Video 2020-06-12 at 16.58.04.mp4"
+          class="card-img-top"
+          autoplay
+          muted
+          loop
+          controls
+        ></video>
+        <div class="card-body">
+          <h5 class="card-title">
+            Reparacion de Hidrogrúa
+          </h5>
+        </div>
+      </div>
+    </div>
+    <!-- ------------------------ -->
+    <div class="col-md-3 mt-3">
+      <div class="card shadow" style="width: 18rem;">
+        <video
+          src="../../../assets/Videos/Reparacion hidrogrúa.mp4"
+          class="card-img-top"
+          autoplay
+          muted
+          loop
+          controls
+        ></video>
+        <div class="card-body">
+          <h5 class="card-title">
+            Reparacion de Hidrogrúa
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ------------------------  -->
+</div>

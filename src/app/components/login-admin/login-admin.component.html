@@ -1,0 +1,34 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h5>Inicie Sesion</h5>
+      <form [formGroup]="formulario" (ngSubmit)="Login()">
+        <div class="form-group">
+          <label>Correo Electrónico</label>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Ingrese su email"
+            formControlName="email"
+          />
+        </div>
+        <div class="form-group">
+          <label>Contraseña</label>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Ingrese su contraseña"
+            formControlName="password"
+          />
+        </div>
+        <button
+          type="submit"
+          [disabled]="!formulario.valid"
+          class="btn btn-primary w-100"
+        >
+          Iniciar Sesion
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

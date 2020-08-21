@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "oleohidraulicanico-49a68": {
+      "hosting": {
+        "HidraulicaWeb": [
+          "oleohidraulicanico-49a68"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "oleohidraulicanico-49a68"
+  }
+}

@@ -1,0 +1,44 @@
+<div *ngIf="usuario && !cargando; else showLogin">
+  <div class="container mt-5">
+    <h3>Publicar un Nuevo Trabajo</h3>
+    <div class="input-group">
+      <div class="row">
+        <div class="col-sm mt-3">
+          <label>Titulo</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Ingrese el titulo"
+            (input)="tituloTrabajo($event.target.value)"
+          />
+        </div>
+        <div class="col-sm mt-3">
+          <label>Elija la Imagen</label>
+          <div class="custom-file">
+            <input
+              (change)="subirImagen($event)"
+              type="file"
+              class="form-control-file"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="btn btn-primary my-2"
+      type="button"
+      (click)="enviarNuevoTrabajo()"
+    >
+      Agregar
+    </button>
+  </div>
+</div>
+
+<ng-template #showLogin>
+  <div *ngIf="cargando">
+    <app-loading></app-loading>
+  </div>
+  <div *ngIf="!cargando">
+    <app-login-admin></app-login-admin>
+  </div>
+</ng-template>

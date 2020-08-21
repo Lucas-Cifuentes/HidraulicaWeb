@@ -1,0 +1,125 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/"
+    ><img src="../../../assets/logo.png" height="50px"
+  /></a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- ------------------------ -->
+  <div *ngIf="!usuario; else showAdmin">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Inicio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/nosotros" routerLinkActive="active"
+            >Nosotros</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/productos" routerLinkActive="active"
+            >Productos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/trabajos" routerLinkActive="active"
+            >Nuestros Trabajos</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- ------------------------ -->
+  <ng-template #showAdmin>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/admin"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Inicio Admin
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Productos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/ver-productos"
+              >Ver Productos</a
+            >
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/nuevo-producto"
+              >Añadir un nuevo Producto</a
+            >
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/ver-ventas" routerLinkActive="active"
+            >Ver Ventas
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Trabajos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/agregar-trabajos"
+              >Añadir Trabajo</a
+            >
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/trabajos">Ver Trabajos</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </ng-template>
+</nav>
+
+<img width="100%" src="../../../assets/Foto-local.jpg" />
+<!-- 
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../../../assets/Foto-local.jpg" class="d-block w-100" />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="../../../assets/conexiones-y-mangueras.png"
+        class="d-block w-100"
+      /> 
+    </div>
+  </div>
+</div>-->
