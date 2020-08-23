@@ -31,11 +31,11 @@ export class AgregarTrabajosComponent implements OnInit {
     Imagen: '',
   };
 
-  tituloTrabajo(titulo) {
+  tituloTrabajo(titulo:string) {
     this.agregarTrabajo.Titulo = titulo;
   }
 
-  subirImagen(evento) {
+  subirImagen(evento:any) {
     let imagen = evento.target.files[0];
     let nombre = evento.target.files[0].name;
     let ruta = `Imagenes/${nombre}`;

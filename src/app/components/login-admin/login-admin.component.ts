@@ -30,6 +30,7 @@ export class LoginAdminComponent implements OnInit {
       )
       .then((user) => {
         console.log(user);
-      });
+      })
+      .catch(() => console.log('Ha ocurrido un error al iniciar sesion'));
   }
 }

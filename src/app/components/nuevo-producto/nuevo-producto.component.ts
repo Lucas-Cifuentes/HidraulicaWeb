@@ -27,15 +27,15 @@ export class NuevoProductoComponent implements OnInit {
     });
   }
 
-  codigoProducto(codigo) {
+  codigoProducto(codigo: string) {
     this.nuevoProducto.Codigo = codigo.toUpperCase();
   }
 
-  descripcionCodigo(descripcion) {
+  descripcionCodigo(descripcion: string) {
     this.nuevoProducto.Descripcion = descripcion.toUpperCase();
   }
 
-  tipoProducto(tipo) {
+  tipoProducto(tipo: string) {
     this.nuevoProducto.Tipo = tipo.toUpperCase();
   }
 
