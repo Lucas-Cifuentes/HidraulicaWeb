@@ -6,16 +6,17 @@
         <tr>
           <th scope="col">Fecha</th>
           <th scope="col">Monto</th>
+          <th scope="col">Productos</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">{{ fecha }}</th>
-          <td>{{ precio | currency }}</td>
+        <tr *ngFor="let venta of listaVentas">
+          <th scope="row">{{ venta.Fecha }}</th>
+          <td>{{ venta.Importe | currency }}</td>
           <td>
-            <a routerLink="/detalles-venta" role="button" class="btn btn-info"
-              >Detalles</a
-            >
+            <p *ngFor="let producto of venta.Productos">
+              <span>{{ producto.Codigo }}</span>
+            </p>
           </td>
         </tr>
       </tbody>

@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { VentasService } from 'src/app/services/ventas.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nueva-venta',
@@ -13,12 +14,19 @@ export class NuevaVentaComponent implements OnInit {
   constructor(
     private db: AngularFirestore,
     private ventas: VentasService,
-    private auth: AngularFireAuth
+    private auth: AngularFireAuth,
+    private router: Router
   ) {}
 
   ListaVender = this.ventas.listaVenta;
   usuario: User;
   cargando = true;
+  Succes = false;
+  dia = new Date().getDate();
+  mes = new Date().getMonth() + 1;
+  anio = new Date().getUTCFullYear();
+
+  fecha = `${this.dia}/${this.mes}/${this.anio}`;
 
   ngOnInit() {
     this.auth.user.subscribe((user) => {
@@ -29,7 +37,13 @@ export class NuevaVentaComponent implements OnInit {
 
   nuevaVenta = {
     Productos: [],
+    Importe: 0,
+    Fecha: this.fecha,
   };
+
+  Importe(importe: number) {
+    this.nuevaVenta.Importe = importe;
+  }
 
   agregarVenta() {
     if (this.ListaVender.length > 0) {
@@ -40,7 +54,10 @@ export class NuevaVentaComponent implements OnInit {
         .collection('Historial de Ventas')
         .add(this.nuevaVenta)
         .then(() => {
-          console.log('Venta Creada');
+          this.Succes = true;
+          setTimeout(() => {
+            this.router.navigate(['/ver-productos']);
+          }, 3000);
         });
     } else {
       console.log('La lista de Venta esta vacía');
